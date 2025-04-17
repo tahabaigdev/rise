@@ -1,4 +1,6 @@
 import Heading1 from "@/components/ui/Heading1";
+import blogFirst from "../../assets/images/blog-img-1.jpg";
+import blogSecond from "../../assets/images/blog-img-2.jpg";
 
 const BlogSection = () => {
   return (
@@ -7,25 +9,30 @@ const BlogSection = () => {
         <div>
           <Heading1
             title="Blogs"
-            subtitle="Each platform simplifies a complex process and empowers people."
+            subtitle="Insights, innovations, and stories from the frontlines of industrial engineering."
           />
         </div>
 
         <div className="mt-[4rem] grid grid-cols-2 gap-[4rem]">
           <a href="" target="_blank" className="group" rel="noreferrer">
             <div className="flex flex-col gap-[2rem]">
-              <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200"></div>
+              <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200">
+                <img
+                  src={blogFirst}
+                  alt="Image"
+                  className="size-full object-cover"
+                />
+              </div>
 
               <div className="flex flex-col gap-[1rem]">
                 <h4 className="text-[2rem] leading-[1.6rem] font-medium capitalize">
-                  Insights
+                  Preventive Maintenance Strategies That Work
                 </h4>
 
                 <p className="text-[1.6rem] font-light">
-                  We cover pertinent questions, provides practical advice and
-                  strategies to navigate data, technology, and digital
-                  transformation, helping professionals unlock innovative
-                  solutions.
+                  Learn how top industrial teams reduce downtime with proactive
+                  maintenance plans. We explore cost-effective techniques and
+                  real-world strategies used across high-demand environments.
                 </p>
               </div>
             </div>
@@ -33,18 +40,23 @@ const BlogSection = () => {
 
           <a href="" target="_blank" className="group" rel="noreferrer">
             <div className="flex flex-col gap-[2rem]">
-              <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200"></div>
+              <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200">
+                <img
+                  src={blogSecond}
+                  alt="Image"
+                  className="size-full object-cover"
+                />
+              </div>
 
               <div className="flex flex-col gap-[1rem]">
                 <h4 className="text-[2rem] leading-[1.6rem] font-medium capitalize">
-                  Insights
+                  Industrial Automation: What’s Next in 2025?
                 </h4>
 
                 <p className="text-[1.6rem] font-light">
-                  We cover pertinent questions, provides practical advice and
-                  strategies to navigate data, technology, and digital
-                  transformation, helping professionals unlock innovative
-                  solutions.
+                  Automation is evolving fast. Discover the latest trends
+                  shaping the future of industrial systems — from smart sensors
+                  and robotics to AI-driven control panels.
                 </p>
               </div>
             </div>

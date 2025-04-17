@@ -1,10 +1,8 @@
-import GlobeComponent from "./GlobeComponent";
-
 const GlobalSection = () => {
   return (
     <section className="relative h-screen overflow-hidden bg-[var(--secondary-color)]">
       <div className="absolute top-0 right-[-35%] z-[9] opacity-70">
-        <GlobeComponent />
+        {/* <GlobeComponent /> */}
       </div>
 
       <div className="pointer-events-none relative top-1/2 z-[10] container -translate-y-1/2">

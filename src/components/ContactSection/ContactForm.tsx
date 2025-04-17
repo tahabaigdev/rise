@@ -9,9 +9,76 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+const countryData = [
+  {
+    name: "United States",
+    code: "US",
+  },
+  {
+    name: "Canada",
+    code: "CA",
+  },
+  {
+    name: "United Kingdom",
+    code: "GB",
+  },
+  {
+    name: "Australia",
+    code: "AU",
+  },
+  {
+    name: "China",
+    code: "CN",
+  },
+  {
+    name: "India",
+    code: "IN",
+  },
+  {
+    name: "Japan",
+    code: "JP",
+  },
+  {
+    name: "Germany",
+    code: "DE",
+  },
+  {
+    name: "France",
+    code: "FR",
+  },
+  {
+    name: "Italy",
+    code: "IT",
+  },
+  {
+    name: "Brazil",
+    code: "BR",
+  },
+  {
+    name: "Russia",
+    code: "RU",
+  },
+  {
+    name: "Mexico",
+    code: "MX",
+  },
+  {
+    name: "South Africa",
+    code: "ZA",
+  },
+  {
+    name: "South Korea",
+    code: "KR",
+  },
+  {
+    name: "Pakistan",
+    code: "PK",
+  },
+];
+
 const ContactForm = () => {
   return (
-    <div className="shadow-shadow2 overflow-hidden rounded-[1.2rem] bg-[#ffffff] px-[2rem] py-[3rem]">
+    <div className="shadow-01 overflow-hidden rounded-[1.2rem] bg-[#ffffff] px-[2rem] py-[3rem]">
       <form className="grid grid-cols-2 gap-[1rem] gap-y-[2rem]">
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="firstname">First Name</Label>
@@ -38,12 +105,14 @@ const ContactForm = () => {
 
           <Select>
             <SelectTrigger>
-              <SelectValue placeholder="Theme" />
+              <SelectValue placeholder="Select Country" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              {countryData.map((item, idx) => (
+                <SelectItem key={idx} value={item.code}>
+                  {item.name}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
@@ -57,12 +126,15 @@ const ContactForm = () => {
           <Label htmlFor="contactreason">Contact Reason</Label>
           <Select>
             <SelectTrigger>
-              <SelectValue placeholder="Theme" />
+              <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="requestdemo">Request Demo</SelectItem>
+              <SelectItem value="contactsales">Contact Sales</SelectItem>
+              <SelectItem value="radixproducts">Radix Products</SelectItem>
+              <SelectItem value="technicalsupport">
+                Technical Support
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>

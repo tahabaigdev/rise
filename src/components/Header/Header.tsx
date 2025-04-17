@@ -44,8 +44,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="border-b border-dashed border-[#e4e4e4] px-[2rem] xl:px-[0rem]">
-      <div className="container flex h-[8rem] items-center justify-between">
+    <header className="border-dashed border-[#e4e4e4] px-[4rem]">
+      <div className="flex h-[8rem] items-center justify-between">
         <div className="flex items-center gap-[2rem]">
           <div>
             <a href="" className="inline-flex max-w-[7rem]">

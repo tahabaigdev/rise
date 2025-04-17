@@ -22,52 +22,39 @@ type AccordionItemData = {
 
 // Tabs
 const tabs: Tab[] = [
-  { label: "Why RadixTech", value: "Why RadixTech" },
-  { label: "Our Partners", value: "Our Partners" },
-  { label: "Technology Expertise", value: "Technology Expertise" },
+  { label: "Vision", value: "Vision" },
+  { label: "Mission", value: "Mission" },
 ];
 
 // Accordion data per tab
 const accordionData: Record<string, AccordionItemData[]> = {
-  "Why RadixTech": [
+  Vision: [
     {
-      title: "Contextual Understanding",
+      title: "Engineering the Future",
       content:
-        "We have a deep understanding of the humanitarian and development sectors' ways of working. Our products are designed to connect a diverse range of users, enabling them to align efforts through a unified decision-making wheel.",
+        "We envision a future where industrial systems are not only reliable but smarter, safer, and more sustainable. Our goal is to lead innovation that powers progress across every sector we serve.",
     },
     {
-      title: "Collaborative Design",
+      title: "Global Standards, Local Impact",
       content:
-        "We co-create products with users through a participatory process that ensures the platforms reflect real needs and operational realities.",
+        "We aim to set global benchmarks in quality and reliability, while delivering solutions that are deeply grounded in the needs of local industries and communities.",
     },
     {
-      title: "Collaborative Design",
+      title: " Sustainable Progress",
       content:
-        "We co-create products with users through a participatory process that ensures the platforms reflect real needs and operational realities.",
-    },
-  ],
-  "Our Partners": [
-    {
-      title: "Trusted by Leading Orgs",
-      content:
-        "Our partners include NGOs, UN agencies, and government bodies who trust our systems to power their data and decision-making workflows.",
-    },
-    {
-      title: "Long-Term Collaboration",
-      content:
-        "We build long-lasting relationships that grow with our partners’ evolving needs and challenges.",
+        "Our vision includes a strong focus on long-term sustainability — from minimizing downtime to optimizing energy efficiency and building solutions that stand the test of time.",
     },
   ],
-  "Technology Expertise": [
+  Mission: [
     {
-      title: "Modern Tech Stack",
+      title: "Reliability Without Compromise",
       content:
-        "Our platforms are built with the latest tech including React, Node.js, PostgreSQL, GraphQL, and more.",
+        "We’re committed to engineering excellence that minimizes risk and maximizes uptime. Every solution we build reflects our dedication to reliability, efficiency, and long-term value.",
     },
     {
-      title: "Cloud Native & Secure",
+      title: "Partnership at Every Step",
       content:
-        "Security and scalability are baked in, with cloud-native deployments using industry best practices.",
+        "We don’t just deliver projects — we build lasting relationships. From planning to execution and support, we collaborate closely with our clients to ensure total alignment and satisfaction.",
     },
   ],
 };
@@ -79,8 +66,8 @@ const WhySection = () => {
     <section>
       <div className="container py-[6rem]">
         <Heading1
-          title="Why RISE"
-          subtitle="Each platform simplifies a complex process and empowers people."
+          title="Who We Are"
+          subtitle="Engineering solutions with precision, purpose, and reliability."
         />
 
         <div className="mx-auto mt-[4rem] max-w-[84rem]">
