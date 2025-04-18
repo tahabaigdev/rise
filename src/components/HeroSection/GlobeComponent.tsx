@@ -1,13 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useMemo } from "react";
 import Globe from "react-globe.gl";
 
 const GlobeComponent: React.FC = () => {
   const globeRef = useRef<any>(null);
-  const [arcsData, setArcsData] = useState<any[]>([]);
 
-  useEffect(() => {
+  const arcsData = useMemo(() => {
     const N = 20;
-    const genArcs = Array.from({ length: N }, () => ({
+    return Array.from({ length: N }, () => ({
       startLat: (Math.random() - 0.5) * 180,
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
@@ -17,29 +16,47 @@ const GlobeComponent: React.FC = () => {
         ["red", "white", "blue", "green"][Math.floor(Math.random() * 4)],
       ],
     }));
-    setArcsData(genArcs);
   }, []);
 
   useEffect(() => {
-    if (globeRef.current) {
-      const controls = globeRef.current.controls();
+    const timeout = setTimeout(() => {
+      if (!globeRef.current) return;
+
+      const controls = globeRef.current.controls?.();
       if (controls) {
         controls.autoRotate = true;
         controls.autoRotateSpeed = 0.5;
-        controls.enableZoom = false; // Disable zooming (scroll zoom)
+        controls.enableZoom = false;
       }
 
-      const renderer = globeRef.current.renderer();
-      if (renderer) {
+      const renderer = globeRef.current.renderer?.();
+      if (renderer?.setClearColor) {
         renderer.setClearColor(0x000000, 0); // Transparent background
       }
 
-      // Access the globe's internal 3D object (scene) and scale it
-      const globeScene = globeRef.current.scene();
-      if (globeScene) {
-        globeScene.scale.set(2, 2, 2); // Increase the globe size (x2)
+      const globeScene = globeRef.current.scene?.();
+      if (globeScene?.scale?.set) {
+        globeScene.scale.set(2, 2, 2); // Increase the globe size
       }
-    }
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (globeRef.current) {
+        try {
+          const renderer = globeRef.current.renderer?.();
+          const scene = globeRef.current.scene?.();
+
+          if (renderer?.dispose) renderer.dispose();
+          if (scene?.dispose) scene.dispose();
+        } catch (err) {
+          console.warn("WebGL cleanup error:", err);
+        }
+      }
+    };
   }, []);
 
   return (

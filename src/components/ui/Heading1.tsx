@@ -14,7 +14,7 @@ const Heading1: React.FC<HeadingProps> = ({ title, subtitle }) => {
           {title}
         </h5>
 
-        <h2 className="max-w-[110rem] text-[2.8rem] leading-[4rem] font-light tracking-[-0.48px]">
+        <h2 className="max-w-[110rem] text-[2.5rem] leading-[3rem] font-light tracking-[-0.48px] text-[#000000] sm:text-[2.8rem] sm:leading-[4rem]">
           {subtitle}
         </h2>
       </div>

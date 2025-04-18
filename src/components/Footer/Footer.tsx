@@ -1,5 +1,7 @@
-import { Facebook, Linkedin } from "lucide-react";
 import Logo from "../../assets/images/logo.png";
+import facebook from "../../assets/images/facebook.svg";
+import instagram from "../../assets/images/instagram.svg";
+import twitter from "../../assets/images/twitter.svg";
 
 const productsItem = [
   "Contact",
@@ -78,13 +80,32 @@ const Footer = () => {
               Follow us
             </h5>
 
-            <ul className="flex items-center gap-[2rem]">
+            <ul className="flex items-center">
               <li className="cursor-pointer">
-                <Facebook className="fill-black stroke-1" />
+                <a
+                  href="https://www.facebook.com/profile.php?id=100093061615807"
+                  className="inline-flex size-[3rem] items-center justify-center"
+                >
+                  <img src={facebook} alt="icon" />
+                </a>
               </li>
 
               <li className="cursor-pointer">
-                <Linkedin className="fill-black stroke-1" />
+                <a
+                  href="https://www.instagram.com/riseengservices/"
+                  className="inline-flex size-[3rem] items-center justify-center"
+                >
+                  <img src={instagram} alt="icon" className="opacity-80" />
+                </a>
+              </li>
+
+              <li className="cursor-pointer">
+                <a
+                  href="https://twitter.com/RiseEngServices"
+                  className="inline-flex size-[3rem] items-center justify-center"
+                >
+                  <img src={twitter} alt="icon" />
+                </a>
               </li>
             </ul>
           </div>

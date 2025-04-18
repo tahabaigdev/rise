@@ -26,9 +26,9 @@ const CarouselSlider = () => {
 
   return (
     <div className="h-full w-full">
-      <div className="flex h-full">
+      <div className="flex h-full flex-col gap-[2rem] sm:gap-[4rem] lg:flex-row lg:gap-[0rem]">
         {/* Left Slider */}
-        <div className="w-[30rem]">
+        <div className="w-full sm:w-[60rem] lg:w-[30rem]">
           <Swiper
             modules={[Autoplay]}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
@@ -118,7 +118,7 @@ const CarouselSlider = () => {
                 className="size-full object-cover"
               />
 
-              <div className="absolute inset-0 flex size-full flex-col justify-between bg-[#00000071] p-[2.4rem]">
+              <div className="absolute inset-0 flex size-full flex-col justify-between p-[2.4rem]">
                 <div className="flex items-center justify-between opacity-0">
                   <div className="size-[4rem] bg-amber-300"></div>
                   <div className="size-[2rem] bg-amber-300"></div>
@@ -146,7 +146,7 @@ const CarouselSlider = () => {
                 className="size-full object-cover"
               />
 
-              <div className="absolute inset-0 flex size-full flex-col justify-between bg-[#00000071] p-[2.4rem]">
+              <div className="absolute inset-0 flex size-full flex-col justify-between p-[2.4rem]">
                 <div className="flex items-center justify-between opacity-0">
                   <div className="size-[4rem] bg-amber-300"></div>
                   <div className="size-[2rem] bg-amber-300"></div>
@@ -174,7 +174,7 @@ const CarouselSlider = () => {
                 className="size-full object-cover"
               />
 
-              <div className="absolute inset-0 flex size-full flex-col justify-between bg-[#00000071] p-[2.4rem]">
+              <div className="absolute inset-0 flex size-full flex-col justify-between p-[2.4rem]">
                 <div className="flex items-center justify-between opacity-0">
                   <div className="size-[4rem] bg-amber-300"></div>
                   <div className="size-[2rem] bg-amber-300"></div>

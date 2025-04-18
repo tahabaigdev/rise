@@ -22,8 +22,8 @@ const BuiltSection = () => {
 
   return (
     <section className="bg-[#EFECEB]">
-      <div className="container pt-[6rem] pb-[20rem]">
-        <div className="flex max-w-[81rem] flex-col items-start gap-[2.4rem] pr-[12rem] pl-[1.6rem]">
+      <div className="container pt-[6rem] pb-[6rem] lg:pb-[20rem]">
+        <div className="flex max-w-[81rem] flex-col items-center gap-[1.8rem] px-[2rem] text-center sm:gap-[2.4rem] md:items-start md:px-[0rem] md:pr-[12rem] md:pl-[1.6rem] md:text-left">
           <h5
             data-aos="fade-left"
             className="text-[1.8rem] leading-[2.8rem] font-medium tracking-[0.2px] text-[var(--primary-color)]"
@@ -51,8 +51,8 @@ const BuiltSection = () => {
           </p>
         </div>
 
-        <div className="mx-auto mt-[6.4rem] grid max-w-[102.4rem] grid-cols-2 gap-[3.2rem] px-[1.6rem]">
-          <div className="relative top-[10rem] grid grid-cols-1 gap-[3.2rem]">
+        <div className="mx-auto mt-[6.4rem] grid max-w-[102.4rem] grid-cols-1 gap-[3.2rem] px-[1.6rem] md:grid-cols-2">
+          <div className="relative grid grid-cols-1 gap-[3.2rem] lg:top-[10rem]">
             <div
               data-aos="fade-up"
               className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
@@ -65,7 +65,7 @@ const BuiltSection = () => {
                 />
               </div>
 
-              <div className="flex h-[23rem] flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 group-hover:h-[26rem]">
+              <div className="flex flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 lg:h-[23rem] lg:group-hover:h-[26rem]">
                 <div className="inline-flex w-max items-center gap-[1.2rem] rounded-[.4rem] bg-[#F8F9FB] px-[1.6rem] py-[1rem] text-[1.2rem] leading-[1.5rem] font-normal">
                   <ArrowUpDown className="size-[2rem]" />
                   <span>Peak Operational Efficiency</span>
@@ -107,7 +107,7 @@ const BuiltSection = () => {
                 />
               </div>
 
-              <div className="flex h-[23rem] flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 group-hover:h-[26rem]">
+              <div className="flex flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 lg:h-[23rem] lg:group-hover:h-[26rem]">
                 <div className="inline-flex w-max items-center gap-[1.2rem] rounded-[.4rem] bg-[#F8F9FB] px-[1.6rem] py-[1rem] text-[1.2rem] leading-[1.5rem] font-normal">
                   <MonitorCheck className="size-[2rem]" />
                   <span>Emissions Monitoring & Control</span>
@@ -150,7 +150,7 @@ const BuiltSection = () => {
                 />
               </div>
 
-              <div className="flex h-[23rem] flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 group-hover:h-[26rem]">
+              <div className="flex flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 lg:h-[23rem] lg:group-hover:h-[26rem]">
                 <div className="inline-flex w-max items-center gap-[1.2rem] rounded-[.4rem] bg-[#F8F9FB] px-[1.6rem] py-[1rem] text-[1.2rem] leading-[1.5rem] font-normal">
                   <BookMarked className="size-[2rem]" />
                   <span>Clean Technology Integration</span>
@@ -191,7 +191,7 @@ const BuiltSection = () => {
                 />
               </div>
 
-              <div className="flex h-[23rem] flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 group-hover:h-[26rem]">
+              <div className="flex flex-col gap-[.8rem] p-[3.2rem] transition-all duration-300 lg:h-[23rem] lg:group-hover:h-[26rem]">
                 <div className="inline-flex w-max items-center gap-[1.2rem] rounded-[.4rem] bg-[#F8F9FB] px-[1.6rem] py-[1rem] text-[1.2rem] leading-[1.5rem] font-normal">
                   <FolderKanban className="size-[2rem]" />
                   <span>Waste-to-Value Innovations</span>

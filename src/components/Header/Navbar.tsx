@@ -1,10 +1,10 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-// import ProductsAndServicesDD from "./ProductsAndServicesDD";
+import ProductsAndServicesDD from "./ProductsAndServicesDD";
 import SolutionsDD from "./SolutionsDD";
-// import SustainabilityDD from "./SustainabilityDD";
-// import NewsAndInsightsDD from "./NewsAndInsightsDD";
-// import AboutUsDD from "./AboutUsDD";
+import SustainabilityDD from "./SustainabilityDD";
+import NewsAndInsightsDD from "./NewsAndInsightsDD";
+import AboutUsDD from "./AboutUsDD";
 
 const navItems = [
   { label: "Solutions", hasDropdown: true, key: "solutions" },
@@ -76,8 +76,7 @@ const Navbar: React.FC = () => {
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                {/* <ProductsAndServicesDD /> */}
-                <SolutionsDD />
+                <ProductsAndServicesDD />
               </div>
             )}
 
@@ -89,8 +88,7 @@ const Navbar: React.FC = () => {
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                {/* <SustainabilityDD /> */}
-                <SolutionsDD />
+                <SustainabilityDD />
               </div>
             )}
 
@@ -102,8 +100,7 @@ const Navbar: React.FC = () => {
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                {/* <NewsAndInsightsDD /> */}
-                <SolutionsDD />
+                <NewsAndInsightsDD />
               </div>
             )}
 
@@ -115,8 +112,7 @@ const Navbar: React.FC = () => {
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                {/* <AboutUsDD /> */}
-                <SolutionsDD />
+                <AboutUsDD />
               </div>
             )}
           </li>

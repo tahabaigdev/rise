@@ -1,4 +1,5 @@
 import { MoveRight } from "lucide-react";
+import dropdownImg1 from "../../assets/images/dropdown-img-1.gif";
 
 const solutionsDropdownData = [
   {
@@ -51,13 +52,6 @@ const solutionsDropdownData = [
   },
 ];
 
-const features = [
-  { label: "Task Management", value: "task" },
-  { label: "Scale", value: "scale" },
-  { label: "Engagement", value: "engagement" },
-  { label: "Trust", value: "trust" },
-];
-
 const SolutionsDD = () => {
   return (
     <div className="shadow-01 flex overflow-hidden rounded-[8px] bg-white">
@@ -84,11 +78,15 @@ const SolutionsDD = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className="min-w-[25rem] bg-[#f4ede4] p-[1.6rem]">
+      <div className="min-w-[25rem] bg-[#E5E1DC] p-[1.6rem]">
         <div className="mb-[3.2rem] flex flex-col gap-[1rem] border-b border-[#00000026] pb-[3.2rem]">
           <h4 className="text-[1.4rem] font-medium tracking-[0.8px] uppercase">
             Solutions
           </h4>
+
+          <div className="w-full">
+            <img src={dropdownImg1} alt="Image" className="w-full" />
+          </div>
 
           <p className="text-[1.5rem] font-light">
             Planetary problems. Global solutions. Local deployment.

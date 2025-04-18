@@ -36,7 +36,10 @@ const TrustedSection: React.FC = () => {
 
   return (
     <section className="flex flex-col items-center gap-[6rem] overflow-hidden py-[3rem]">
-      <div data-aos="fade-up" className="max-w-[108rem] text-center">
+      <div
+        data-aos="fade-up"
+        className="max-w-[108rem] px-[2rem] text-center md:px-[0rem]"
+      >
         <Heading1
           title=" Trusted by Industry Leaders"
           subtitle=" We’re proud to partner with organizations that set the standard in

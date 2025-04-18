@@ -45,7 +45,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="border-dashed border-[#e4e4e4] px-[4rem]">
+    <header className="border-dashed border-[#e4e4e4] px-[2rem] sm:px-[4rem]">
       <div className="relative flex h-[8rem] items-center justify-between">
         <div className="flex items-center gap-[3rem]">
           <div>

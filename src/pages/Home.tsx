@@ -23,10 +23,10 @@ const Home = () => {
       <BuiltSection />
       {/* <ModularSection /> */}
       <AboutSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       {/* <GlobalSection /> */}
-      <ContactSection />
-      <ReadySection />
+      {/* <ContactSection /> */}
+      {/* <ReadySection /> */}
     </main>
   );
 };

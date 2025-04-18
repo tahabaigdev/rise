@@ -73,7 +73,7 @@ const WhySection = () => {
 
   return (
     <section className="bg-[#F7F7F7]">
-      <div className="container py-[6rem]">
+      <div className="container px-[2rem] py-[6rem] md:px-[0rem]">
         <div data-aos="fade-up">
           <Heading1
             title="Who We Are"
