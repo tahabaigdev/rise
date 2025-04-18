@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const countryData = [
   {
@@ -76,35 +77,256 @@ const countryData = [
   },
 ];
 
+interface FormDataType {
+  firstname: string;
+  lastname: string;
+  company: string;
+  email: string;
+  country: string;
+  phone: string;
+  contactreason: string;
+  message: string;
+}
+
+type ErrorType = {
+  [K in keyof FormDataType]?: string;
+};
+
+type TouchedType = {
+  [K in keyof FormDataType]?: boolean;
+};
+
 const ContactForm = () => {
+  const [submitStatus, setSubmitStatus] = useState("");
+  const [formData, setFormData] = useState<FormDataType>({
+    firstname: "",
+    lastname: "",
+    company: "",
+    email: "",
+    country: "",
+    phone: "",
+    contactreason: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<ErrorType>({});
+  const [touched, setTouched] = useState<TouchedType>({});
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+
+    if (errors[name as keyof ErrorType]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+
+    if (touched[name as keyof TouchedType]) {
+      validateField(name as keyof FormDataType, value);
+    }
+  };
+
+  const handleSelectChange = (name: keyof FormDataType, value: string) => {
+    setFormData({ ...formData, [name]: value });
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+
+    if (touched[name]) {
+      validateField(name, value);
+    }
+  };
+
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    validateField(
+      name as keyof FormDataType,
+      formData[name as keyof FormDataType],
+    );
+  };
+
+  const validateField = (fieldName: keyof FormDataType, value: string) => {
+    let error = "";
+
+    if (!value.trim()) {
+      error = "This field is required";
+    } else {
+      switch (fieldName) {
+        case "email":
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            error = "Must be valid email. example@yourdomain.com";
+          }
+          break;
+        case "phone":
+          if (!/^\d{10,15}$/.test(value)) {
+            error = "Must be a valid phone number (10-15 digits).";
+          }
+          break;
+      }
+    }
+
+    setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: error }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Mark all fields as touched
+    const allTouched = Object.keys(formData).reduce((acc, key) => {
+      acc[key as keyof FormDataType] = true;
+      return acc;
+    }, {} as TouchedType);
+    setTouched(allTouched);
+
+    // Validate all fields
+    Object.entries(formData).forEach(([key, value]) => {
+      validateField(key as keyof FormDataType, value);
+    });
+
+    // Check if there are any errors
+    if (Object.values(errors).some((error) => error)) {
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://rise.radixtech.org/submit_form.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams(
+            formData as unknown as Record<string, string>,
+          ).toString(),
+        },
+      );
+
+      if (response.ok) {
+        setSubmitStatus(
+          "Thank you for contacting RISE. We will get in touch with you shortly.",
+        );
+        setFormData({
+          firstname: "",
+          lastname: "",
+          company: "",
+          email: "",
+          country: "",
+          phone: "",
+          contactreason: "",
+          message: "",
+        });
+        setErrors({});
+        setTouched({});
+      } else {
+        setSubmitStatus("Form submission failed.");
+      }
+    } catch {
+      setSubmitStatus("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div className="shadow-01 overflow-hidden rounded-[1.2rem] bg-[#ffffff] px-[2rem] py-[3rem]">
-      <form className="grid grid-cols-2 gap-[1rem] gap-y-[2rem]">
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-2 gap-[1rem] gap-y-[2rem]"
+      >
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="firstname">First Name</Label>
-          <Input type="text" name="firstname" />
+          <Input
+            value={formData.firstname}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            type="text"
+            name="firstname"
+            className={`${
+              errors.firstname ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+          />
+          {errors.firstname && (
+            <span className="text-[1rem] text-[#E50914]">
+              {errors.firstname}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="lastname">Last Name</Label>
-          <Input type="text" name="lastname" />
+          <Input
+            value={formData.lastname}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`${
+              errors.lastname ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+            type="text"
+            name="lastname"
+          />
+          {errors.lastname && (
+            <span className="text-[1rem] text-[#E50914]">
+              {errors.lastname}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="company">Company</Label>
-          <Input type="text" name="company" />
+          <Input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`${
+              errors.company ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+          />
+          {errors.company && (
+            <span className="text-[1rem] text-[#E50914]">{errors.company}</span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="email">Email</Label>
-          <Input type="text" name="email" />
+          <Input
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`${
+              errors.email ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+          />
+          {errors.email && (
+            <span className="text-[1rem] text-[#E50914]">{errors.email}</span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="country">Country</Label>
-
-          <Select>
-            <SelectTrigger>
+          <Select
+            value={formData.country}
+            onValueChange={(value) => handleSelectChange("country", value)}
+            onOpenChange={(open) => {
+              if (!open && !touched.country) {
+                setTouched((prev) => ({ ...prev, country: true }));
+                validateField("country", formData.country);
+              }
+            }}
+          >
+            <SelectTrigger
+              className={`${
+                errors.country ? "border-[#E50914]" : "border-[#e9e2da]"
+              }`}
+            >
               <SelectValue placeholder="Select Country" />
             </SelectTrigger>
             <SelectContent>
@@ -115,17 +337,47 @@ const ContactForm = () => {
               ))}
             </SelectContent>
           </Select>
+          {errors.country && (
+            <span className="text-[1rem] text-[#E50914]">{errors.country}</span>
+          )}
         </div>
 
         <div className="flex flex-col gap-[.5rem]">
           <Label htmlFor="phone">Phone</Label>
-          <Input type="text" name="phone" />
+          <Input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`${
+              errors.phone ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+          />
+          {errors.phone && (
+            <span className="text-[1rem] text-[#E50914]">{errors.phone}</span>
+          )}
         </div>
 
         <div className="col-span-2 flex flex-col gap-[.5rem]">
           <Label htmlFor="contactreason">Contact Reason</Label>
-          <Select>
-            <SelectTrigger>
+          <Select
+            value={formData.contactreason}
+            onValueChange={(value) =>
+              handleSelectChange("contactreason", value)
+            }
+            onOpenChange={(open) => {
+              if (!open && !touched.contactreason) {
+                setTouched((prev) => ({ ...prev, contactreason: true }));
+                validateField("contactreason", formData.contactreason);
+              }
+            }}
+          >
+            <SelectTrigger
+              className={`${
+                errors.contactreason ? "border-[#E50914]" : "border-[#e9e2da]"
+              }`}
+            >
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
@@ -137,11 +389,27 @@ const ContactForm = () => {
               </SelectItem>
             </SelectContent>
           </Select>
+          {errors.contactreason && (
+            <span className="text-[1rem] text-[#E50914]">
+              {errors.contactreason}
+            </span>
+          )}
         </div>
 
         <div className="col-span-2 flex flex-col gap-[.5rem]">
           <Label htmlFor="message">Message</Label>
-          <Textarea />
+          <Textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={`${
+              errors.message ? "border-[#E50914]" : "border-[#e9e2da]"
+            }`}
+          />
+          {errors.message && (
+            <span className="text-[1rem] text-[#E50914]">{errors.message}</span>
+          )}
         </div>
 
         <button
@@ -150,6 +418,12 @@ const ContactForm = () => {
         >
           Submit
         </button>
+
+        {submitStatus && (
+          <p className="mt-4 text-center text-[1.4rem] text-[#000000] sm:col-span-2">
+            {submitStatus}
+          </p>
+        )}
       </form>
     </div>
   );

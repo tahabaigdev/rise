@@ -113,28 +113,28 @@ export default function ScrollGallery() {
         {/* Right Column */}
         <div className="right sticky top-0 flex h-screen w-1/2 flex-col">
           <div className="photos relative top-[5rem] mx-auto h-[50rem] w-full">
-            <div className="photo absolute h-full w-full bg-red-600">
+            <div className="photo absolute h-full w-full overflow-hidden rounded-[1.8rem] bg-red-600">
               <img
                 src={fieldServices}
                 alt="Image"
                 className="size-full object-cover"
               />
             </div>
-            <div className="photo absolute h-full w-full bg-red-600">
+            <div className="photo absolute h-full w-full overflow-hidden rounded-[1.8rem] bg-red-600">
               <img
                 src={consultancy}
                 alt="Image"
                 className="size-full object-cover"
               />
             </div>
-            <div className="photo absolute h-full w-full bg-red-600">
+            <div className="photo absolute h-full w-full overflow-hidden rounded-[1.8rem] bg-red-600">
               <img
                 src={construction}
                 alt="Image"
                 className="size-full object-cover"
               />
             </div>
-            <div className="photo absolute h-full w-full bg-red-600">
+            <div className="photo absolute h-full w-full overflow-hidden rounded-[1.8rem] bg-red-600">
               <img
                 src={engineering}
                 alt="Image"

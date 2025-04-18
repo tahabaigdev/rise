@@ -1,11 +1,20 @@
 import { Flower2, HandHeart, Landmark, MountainSnow } from "lucide-react";
 import Heading1 from "@/components/ui/Heading1";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const SolutionSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
     <section>
       <div className="container py-[6rem]">
-        <div>
+        <div data-aos="fade-up">
           <Heading1
             title="E.S.G. at RISE"
             subtitle="Engineering a sustainable future through responsible practices."
@@ -14,7 +23,10 @@ const SolutionSection = () => {
 
         <div className="mt-[8rem]">
           <div className="grid grid-cols-1 gap-[3.2rem] lg:grid-cols-2">
-            <div className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row">
+            <div
+              data-aos="fade-up"
+              className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row"
+            >
               <div>
                 <Flower2 className="size-[5rem] stroke-1 text-[var(--primary-color)]" />
               </div>
@@ -31,7 +43,11 @@ const SolutionSection = () => {
               </div>
             </div>
 
-            <div className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row"
+            >
               <div>
                 <MountainSnow className="size-[5rem] stroke-1 text-[var(--primary-color)]" />
               </div>
@@ -49,7 +65,11 @@ const SolutionSection = () => {
               </div>
             </div>
 
-            <div className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row"
+            >
               <div>
                 <HandHeart className="size-[5rem] stroke-1 text-[var(--primary-color)]" />
               </div>
@@ -68,7 +88,11 @@ const SolutionSection = () => {
               </div>
             </div>
 
-            <div className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="shadow-shadow2 hover:shadow-shadow3 flex flex-col items-center gap-[1rem] border-b border-[var(--primary-color)] bg-[#FAF8F5] p-[2rem] pb-[4rem] transition-all duration-300 hover:scale-[1.05] hover:border-[#e9e2da] md:flex-row"
+            >
               <div>
                 <Landmark className="size-[5rem] stroke-1 text-[var(--primary-color)]" />
               </div>

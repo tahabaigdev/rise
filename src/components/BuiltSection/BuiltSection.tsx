@@ -9,19 +9,41 @@ import optimizePerformance from "../../assets/images/optimize-performance.jpg";
 import turnByProducts from "../../assets/images/turn-byproducts.jpg";
 import futureProof from "../../assets/images/future-proof.jpg";
 import stopHidden from "../../assets/images/stop-hidden.jpg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const BuiltSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
-    <section>
+    <section className="bg-[#EFECEB]">
       <div className="container pt-[6rem] pb-[20rem]">
         <div className="flex max-w-[81rem] flex-col items-start gap-[2.4rem] pr-[12rem] pl-[1.6rem]">
-          <h5 className="text-[1.8rem] leading-[2.8rem] font-medium tracking-[0.2px] text-[var(--primary-color)]">
+          <h5
+            data-aos="fade-left"
+            className="text-[1.8rem] leading-[2.8rem] font-medium tracking-[0.2px] text-[var(--primary-color)]"
+          >
             Built for growth
           </h5>
-          <h3 className="text-[3.8rem] leading-[4.8rem] font-medium tracking-[-0.2px]">
+
+          <h3
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="text-[3.8rem] leading-[4.8rem] font-medium tracking-[-0.2px]"
+          >
             Driving Industrial Sustainability
           </h3>
-          <p className="text-[1.8rem] leading-[2.8rem] font-light tracking-[0.2px] text-[#425466]">
+
+          <p
+            data-aos="fade-left"
+            data-aos-delay="200"
+            className="text-[1.8rem] leading-[2.8rem] font-light tracking-[0.2px] text-[#425466]"
+          >
             RISE Engineering delivers cutting-edge solutions that reduce
             environmental impact while maximizing operational performance. We
             help clients meet evolving regulations and achieve long-term
@@ -31,7 +53,10 @@ const BuiltSection = () => {
 
         <div className="mx-auto mt-[6.4rem] grid max-w-[102.4rem] grid-cols-2 gap-[3.2rem] px-[1.6rem]">
           <div className="relative top-[10rem] grid grid-cols-1 gap-[3.2rem]">
-            <div className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+            <div
+              data-aos="fade-up"
+              className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+            >
               <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
                 <img
                   src={optimizePerformance}
@@ -69,7 +94,11 @@ const BuiltSection = () => {
               </div>
             </div>
 
-            <div className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+            >
               <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
                 <img
                   src={stopHidden}
@@ -108,7 +137,11 @@ const BuiltSection = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-[3.2rem]">
-            <div className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+            >
               <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
                 <img
                   src={futureProof}
@@ -145,7 +178,11 @@ const BuiltSection = () => {
               </div>
             </div>
 
-            <div className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="group shadow-01 flex h-[55rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+            >
               <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
                 <img
                   src={turnByProducts}

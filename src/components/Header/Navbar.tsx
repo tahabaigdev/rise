@@ -1,15 +1,21 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import FeaturesDropdown from "./FeaturesDropdown";
-import SolutionsDropdown from "./SolutionsDropdown";
-import ResourcesDropdown from "./ResourcesDropdown";
+// import ProductsAndServicesDD from "./ProductsAndServicesDD";
+import SolutionsDD from "./SolutionsDD";
+// import SustainabilityDD from "./SustainabilityDD";
+// import NewsAndInsightsDD from "./NewsAndInsightsDD";
+// import AboutUsDD from "./AboutUsDD";
 
 const navItems = [
-  { label: "Features", hasDropdown: true, key: "features" },
   { label: "Solutions", hasDropdown: true, key: "solutions" },
-  { label: "Enterprise", hasDropdown: false },
-  { label: "Resources", hasDropdown: true, key: "resources" },
-  { label: "Pricing", hasDropdown: false },
+  {
+    label: "Products and Services",
+    hasDropdown: true,
+    key: "productsandservices",
+  },
+  { label: "Sustainability", hasDropdown: true, key: "sustainability" },
+  { label: "News and Insights", hasDropdown: true, key: "newsandinsights" },
+  { label: "About Us", hasDropdown: true, key: "aboutus" },
 ];
 
 const Navbar: React.FC = () => {
@@ -50,18 +56,6 @@ const Navbar: React.FC = () => {
               </a>
             )}
 
-            {item.key === "features" && (
-              <div
-                className={`absolute top-full z-50 transition-all duration-300 ${
-                  activeDropdown === "features"
-                    ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
-                    : "pointer-events-none invisible pt-[0rem] opacity-0"
-                }`}
-              >
-                <FeaturesDropdown />
-              </div>
-            )}
-
             {item.key === "solutions" && (
               <div
                 className={`absolute top-full z-50 transition-all duration-300 ${
@@ -70,19 +64,59 @@ const Navbar: React.FC = () => {
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                <SolutionsDropdown />
+                <SolutionsDD />
               </div>
             )}
 
-            {item.key === "resources" && (
+            {item.key === "productsandservices" && (
               <div
-                className={`absolute top-full left-[-18rem] z-50 transition-all duration-300 ${
-                  activeDropdown === "resources"
+                className={`absolute top-full z-50 transition-all duration-300 ${
+                  activeDropdown === "productsandservices"
                     ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
                     : "pointer-events-none invisible pt-[0rem] opacity-0"
                 }`}
               >
-                <ResourcesDropdown />
+                {/* <ProductsAndServicesDD /> */}
+                <SolutionsDD />
+              </div>
+            )}
+
+            {item.key === "sustainability" && (
+              <div
+                className={`absolute top-full left-[-18rem] z-50 transition-all duration-300 ${
+                  activeDropdown === "sustainability"
+                    ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
+                    : "pointer-events-none invisible pt-[0rem] opacity-0"
+                }`}
+              >
+                {/* <SustainabilityDD /> */}
+                <SolutionsDD />
+              </div>
+            )}
+
+            {item.key === "newsandinsights" && (
+              <div
+                className={`absolute top-full left-[-30rem] z-50 transition-all duration-300 ${
+                  activeDropdown === "newsandinsights"
+                    ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
+                    : "pointer-events-none invisible pt-[0rem] opacity-0"
+                }`}
+              >
+                {/* <NewsAndInsightsDD /> */}
+                <SolutionsDD />
+              </div>
+            )}
+
+            {item.key === "aboutus" && (
+              <div
+                className={`absolute top-full left-[-30rem] z-50 transition-all duration-300 ${
+                  activeDropdown === "aboutus"
+                    ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
+                    : "pointer-events-none invisible pt-[0rem] opacity-0"
+                }`}
+              >
+                {/* <AboutUsDD /> */}
+                <SolutionsDD />
               </div>
             )}
           </li>

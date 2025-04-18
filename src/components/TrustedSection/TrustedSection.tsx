@@ -7,6 +7,9 @@ import clientLogo4 from "../../assets/images/partner-logo-4.png";
 import clientLogo5 from "../../assets/images/partner-logo-5.png";
 import clientLogo6 from "../../assets/images/partner-logo-6.png";
 import Heading1 from "../ui/Heading1";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 // Define type for the array of image imports
 const marqueeItems: string[] = [
@@ -25,9 +28,15 @@ const marqueeItems: string[] = [
 ];
 
 const TrustedSection: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
     <section className="flex flex-col items-center gap-[6rem] overflow-hidden py-[3rem]">
-      <div className="max-w-[108rem] text-center">
+      <div data-aos="fade-up" className="max-w-[108rem] text-center">
         <Heading1
           title=" Trusted by Industry Leaders"
           subtitle=" We’re proud to partner with organizations that set the standard in
@@ -35,7 +44,7 @@ const TrustedSection: React.FC = () => {
         />
       </div>
 
-      <div className="w-full">
+      <div data-aos="fade-up" className="w-full">
         <div className="marquee-sec">
           <Marquee speed={70} gradient={false} pauseOnHover={true}>
             {marqueeItems.map((item, idx) => (

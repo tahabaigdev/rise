@@ -3,7 +3,7 @@ import AboutSection from "@/components/AboutSection/AboutSection";
 import BlogSection from "@/components/BlogSection/BlogSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import EnterpriseSection from "@/components/EnterpriseSection/EnterpriseSection";
-import ModularSection from "@/components/ModularSection/ModularSection";
+// import ModularSection from "@/components/ModularSection/ModularSection";
 import SolutionSection from "@/components/SolutionSection/SolutionSection";
 import TrustedSection from "@/components/TrustedSection/TrustedSection";
 import WhySection from "@/components/WhySection/WhySection";
@@ -16,16 +16,16 @@ const Home = () => {
     <main>
       <HeroSection />
       <TrustedSection />
+      <EnterpriseSection />
+      <LaunchSection />
       <SolutionSection />
       <WhySection />
+      <BuiltSection />
+      {/* <ModularSection /> */}
       <AboutSection />
       <BlogSection />
-      <ContactSection />
-      <ModularSection />
       {/* <GlobalSection /> */}
-      <EnterpriseSection />
-      <BuiltSection />
-      <LaunchSection />
+      <ContactSection />
       <ReadySection />
     </main>
   );

@@ -1,12 +1,24 @@
 import { ChevronRight, ContactRound, Navigation } from "lucide-react";
 import CtaButton from "../ui/CtaButton";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const ReadySection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
     <section>
       <div className="container py-[6rem]">
         <div className="grid grid-cols-2">
-          <div className="flex flex-col items-start gap-[2.4rem] pr-[11.2rem] pl-[1.6rem]">
+          <div
+            data-aos="fade-up"
+            className="flex flex-col items-start gap-[2.4rem] pr-[11.2rem] pl-[1.6rem]"
+          >
             <h4 className="text-[2.4rem] leading-[3.2rem] font-medium tracking-[0.1px] capitalize">
               Ready to optimize your operations?
             </h4>
@@ -36,7 +48,11 @@ const ReadySection = () => {
           </div>
 
           <div className="grid grid-cols-2">
-            <div className="flex flex-col items-start gap-[.8rem] pr-[3.2rem] pl-[1.6rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex flex-col items-start gap-[.8rem] pr-[3.2rem] pl-[1.6rem]"
+            >
               <div className="mb-[.8rem] flex size-[4rem] items-center">
                 <Navigation className="size-[2.8rem]" />
               </div>
@@ -62,7 +78,11 @@ const ReadySection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-[.8rem] pr-[3.2rem] pl-[1.6rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="flex flex-col items-start gap-[.8rem] pr-[3.2rem] pl-[1.6rem]"
+            >
               <div className="mb-[.8rem] flex size-[4rem] items-center">
                 <ContactRound className="size-[2.8rem]" />
               </div>

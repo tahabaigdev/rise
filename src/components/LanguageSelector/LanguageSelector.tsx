@@ -120,10 +120,10 @@ const LanguageSelector: React.FC = () => {
       </button>
 
       <div
-        className={`shadow-01 absolute left-0 z-[1] w-full rounded-[8px] bg-[#F6F9FC] py-[1.6rem] transition-all duration-300 ${
+        className={`shadow-01 absolute top-[100%] left-0 z-[100] w-full rounded-[8px] bg-[#F6F9FC] py-[1.6rem] transition-all duration-300 ${
           open
-            ? "visible top-[-88%] opacity-100"
-            : "invisible top-[-85%] opacity-0"
+            ? "pointer-events-auto visible opacity-100"
+            : "pointer-events-none invisible opacity-0"
         }`}
       >
         <div className="grid grid-cols-4 gap-y-[.8rem]">

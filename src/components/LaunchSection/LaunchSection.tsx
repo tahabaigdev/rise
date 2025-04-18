@@ -2,19 +2,39 @@ import { Bookmark, ChevronRight } from "lucide-react";
 import fireProofing from "../../assets/images/fire-proofing.jpg";
 import inspectionTesting from "../../assets/images/inspection-testing.jpg";
 import protectiveCoating from "../../assets/images/protective-coating.jpg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const LaunchSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
-    <section>
+    <section className="bg-[#EFECEB]">
       <div className="container py-[6rem]">
         <div className="flex max-w-[81rem] flex-col items-start gap-[2.4rem] pr-[12rem] pl-[1.6rem]">
-          <h5 className="text-[1.8rem] leading-[2.8rem] font-medium tracking-[0.2px] text-[var(--primary-color)]">
+          <h5
+            data-aos="fade-left"
+            className="text-[1.8rem] leading-[2.8rem] font-medium tracking-[0.2px] text-[var(--primary-color)]"
+          >
             Assosiate Services
           </h5>
-          <h3 className="text-[3.8rem] leading-[4.8rem] font-medium tracking-[-0.2px]">
+
+          <h3
+            data-aos="fade-left"
+            className="text-[3.8rem] leading-[4.8rem] font-medium tracking-[-0.2px]"
+          >
             Specialized Industrial Solutions Through Strategic Alliances
           </h3>
-          <p className="text-[1.8rem] leading-[2.8rem] font-light tracking-[0.2px] text-[#425466]">
+
+          <p
+            data-aos="fade-left"
+            className="text-[1.8rem] leading-[2.8rem] font-light tracking-[0.2px]"
+          >
             Through our network of trusted associates, we extend our service
             portfolio to include specialized solutions critical to industrial
             performance and compliance. These services encompass protective
@@ -27,7 +47,10 @@ const LaunchSection = () => {
         </div>
 
         <div className="mt-[6.4rem] grid grid-cols-3 gap-[3.2rem] px-[1.6rem]">
-          <div className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+          <div
+            data-aos="fade-up"
+            className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+          >
             <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
               <img
                 src={protectiveCoating}
@@ -65,7 +88,11 @@ const LaunchSection = () => {
             </div>
           </div>
 
-          <div className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+          >
             <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
               <img
                 src={fireProofing}
@@ -101,7 +128,11 @@ const LaunchSection = () => {
             </div>
           </div>
 
-          <div className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="group shadow-01 flex h-[50rem] flex-col overflow-hidden rounded-[.8rem] bg-white p-[.4rem]"
+          >
             <div className="h-full overflow-hidden rounded-[.4rem] bg-[pink] transition-all duration-200">
               <img
                 src={inspectionTesting}

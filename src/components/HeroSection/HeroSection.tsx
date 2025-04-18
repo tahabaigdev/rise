@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
     <section className="relative bg-white px-[4rem] pb-[4rem]">
       <div
         style={{ height: "calc(100vh - 115px)" }}
-        className="relative overflow-hidden rounded-[1.5rem] bg-[var(--secondary-color)]"
+        className="relative overflow-hidden rounded-[1.5rem] bg-[#3A53A1]"
       >
         <div className="absolute z-[10] flex size-full flex-col items-start justify-center pl-[4rem] text-left">
           <h1 className="max-w-[70rem] text-[2.2rem] leading-[3.2rem] font-medium text-white uppercase sm:text-[4rem] sm:leading-[5rem]">

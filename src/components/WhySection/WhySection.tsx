@@ -7,6 +7,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Plus } from "lucide-react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 // Tab definition
 type Tab = {
@@ -62,15 +65,27 @@ const accordionData: Record<string, AccordionItemData[]> = {
 const WhySection = () => {
   const [activeTab, setActiveTab] = useState<string>(tabs[0].value);
 
-  return (
-    <section>
-      <div className="container py-[6rem]">
-        <Heading1
-          title="Who We Are"
-          subtitle="Engineering solutions with precision, purpose, and reliability."
-        />
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
 
-        <div className="mx-auto mt-[4rem] max-w-[84rem]">
+  return (
+    <section className="bg-[#F7F7F7]">
+      <div className="container py-[6rem]">
+        <div data-aos="fade-up">
+          <Heading1
+            title="Who We Are"
+            subtitle="Engineering solutions with precision, purpose, and reliability."
+          />
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="mx-auto mt-[4rem] max-w-[84rem]"
+        >
           {/* Tabs */}
           <ul className="flex items-center justify-center gap-[2rem] border-b border-solid border-[#C9C9C9]">
             {tabs.map((item) => (

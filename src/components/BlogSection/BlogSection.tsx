@@ -1,12 +1,21 @@
 import Heading1 from "@/components/ui/Heading1";
 import blogFirst from "../../assets/images/blog-img-1.jpg";
 import blogSecond from "../../assets/images/blog-img-2.jpg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const BlogSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 300,
+    });
+  }, []);
+
   return (
-    <section>
+    <section className="bg-[#EFECEB]">
       <div className="container py-[6rem]">
-        <div>
+        <div data-aos="fade-up">
           <Heading1
             title="Blogs"
             subtitle="Insights, innovations, and stories from the frontlines of industrial engineering."
@@ -14,13 +23,19 @@ const BlogSection = () => {
         </div>
 
         <div className="mt-[4rem] grid grid-cols-2 gap-[4rem]">
-          <a href="" target="_blank" className="group" rel="noreferrer">
+          <a
+            href=""
+            target="_blank"
+            className="group"
+            rel="noreferrer"
+            data-aos="fade-left"
+          >
             <div className="flex flex-col gap-[2rem]">
               <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200">
                 <img
                   src={blogFirst}
                   alt="Image"
-                  className="size-full object-cover"
+                  className="h-full w-full object-cover object-center transition-all duration-300 ease-out group-hover:scale-[1.05]"
                 />
               </div>
 
@@ -38,13 +53,19 @@ const BlogSection = () => {
             </div>
           </a>
 
-          <a href="" target="_blank" className="group" rel="noreferrer">
+          <a
+            href=""
+            target="_blank"
+            className="group"
+            rel="noreferrer"
+            data-aos="fade-right"
+          >
             <div className="flex flex-col gap-[2rem]">
               <div className="shadow-shadow2 aspect-[1.5/1] overflow-hidden rounded-[1.2rem] border border-[#e9e2da] bg-amber-200">
                 <img
                   src={blogSecond}
                   alt="Image"
-                  className="size-full object-cover"
+                  className="h-full w-full object-cover object-center transition-all duration-300 ease-out group-hover:scale-[1.05]"
                 />
               </div>
 

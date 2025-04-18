@@ -1,9 +1,10 @@
 import { Menu } from "lucide-react";
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/logo.png";
 import CtaButton from "@/components/ui/CtaButton";
 import Navbar from "./Navbar";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import { useEffect, useState } from "react";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 const Header = () => {
   const [activeHamburger, setActiveHamburger] = useState<boolean>(false);
@@ -45,10 +46,10 @@ const Header = () => {
 
   return (
     <header className="border-dashed border-[#e4e4e4] px-[4rem]">
-      <div className="flex h-[8rem] items-center justify-between">
-        <div className="flex items-center gap-[2rem]">
+      <div className="relative flex h-[8rem] items-center justify-between">
+        <div className="flex items-center gap-[3rem]">
           <div>
-            <a href="" className="inline-flex max-w-[7rem]">
+            <a href="" className="inline-flex max-w-[18rem]">
               <img
                 src={Logo}
                 alt="Brand Logo"
@@ -62,7 +63,9 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-[2rem] lg:flex">
+          <LanguageSelector />
+
           <CtaButton
             text="Contact Sales"
             bgColor="bg-[var(--primary-color)]"
