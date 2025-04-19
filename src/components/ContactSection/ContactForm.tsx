@@ -383,7 +383,7 @@ const ContactForm = () => {
             <SelectContent>
               <SelectItem value="requestdemo">Request Demo</SelectItem>
               <SelectItem value="contactsales">Contact Sales</SelectItem>
-              <SelectItem value="radixproducts">Radix Products</SelectItem>
+              <SelectItem value="riseproducts">RISE Products</SelectItem>
               <SelectItem value="technicalsupport">
                 Technical Support
               </SelectItem>
