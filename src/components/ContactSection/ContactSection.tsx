@@ -15,15 +15,15 @@ const ContactSection = () => {
     <section className="bg-[#3A53A1]">
       <div className="overflow-x-hidden">
         <div className="container py-[1rem]">
-          <div className="relative z-[1] grid grid-cols-2 gap-[4rem] overflow-hidden rounded-[1.2rem] p-[4rem]">
+          <div className="relative z-[1] grid grid-cols-1 gap-[4rem] overflow-hidden rounded-[1.2rem] p-[2rem] md:grid-cols-2 md:p-[4rem]">
             <div data-aos="fade-up">
               <ContactForm />
             </div>
 
-            <div className="mt-[2rem] flex flex-col items-start justify-end text-left text-white">
+            <div className="-order-1 mt-[2rem] flex flex-col items-start justify-end text-left text-white lg:order-1">
               <h3
                 data-aos="fade-right"
-                className="text-left text-[5rem] leading-[6rem] font-medium"
+                className="sm:text-[5rem]sm: text-left text-[3rem] leading-[4rem] font-medium sm:leading-[6rem]"
               >
                 Let’s Build Something Reliable
               </h3>

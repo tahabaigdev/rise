@@ -14,7 +14,7 @@ const BlogSection = () => {
 
   return (
     <section className="bg-[#EFECEB]">
-      <div className="container py-[6rem]">
+      <div className="container px-[2rem] py-[6rem] lg:px-[0rem]">
         <div data-aos="fade-up">
           <Heading1
             title="Blogs"
@@ -22,7 +22,7 @@ const BlogSection = () => {
           />
         </div>
 
-        <div className="mt-[4rem] grid grid-cols-2 gap-[4rem]">
+        <div className="mt-[4rem] grid grid-cols-1 gap-[4rem] md:grid-cols-2">
           <a
             href=""
             target="_blank"
@@ -40,7 +40,7 @@ const BlogSection = () => {
               </div>
 
               <div className="flex flex-col gap-[1rem]">
-                <h4 className="text-[2rem] leading-[1.6rem] font-medium capitalize">
+                <h4 className="text-[2rem] leading-[2.2rem] font-medium capitalize">
                   Preventive Maintenance Strategies That Work
                 </h4>
 
@@ -70,7 +70,7 @@ const BlogSection = () => {
               </div>
 
               <div className="flex flex-col gap-[1rem]">
-                <h4 className="text-[2rem] leading-[1.6rem] font-medium capitalize">
+                <h4 className="text-[2rem] leading-[2.2rem] font-medium capitalize">
                   Industrial Automation: What’s Next in 2025?
                 </h4>
 

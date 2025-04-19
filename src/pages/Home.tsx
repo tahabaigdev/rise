@@ -13,7 +13,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 
 const Home = () => {
   return (
-    <main>
+    <main className="overflow-hidden">
       <HeroSection />
       <TrustedSection />
       <EnterpriseSection />
@@ -23,10 +23,10 @@ const Home = () => {
       <BuiltSection />
       {/* <ModularSection /> */}
       <AboutSection />
-      {/* <BlogSection /> */}
+      <BlogSection />
       {/* <GlobalSection /> */}
-      {/* <ContactSection /> */}
-      {/* <ReadySection /> */}
+      <ContactSection />
+      <ReadySection />
     </main>
   );
 };

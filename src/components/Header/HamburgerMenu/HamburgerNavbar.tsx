@@ -1,73 +1,52 @@
 import { Building, ChevronRight } from "lucide-react";
 
 type HamburgerNavbarProps = {
-  activePopup: "products" | "solutions" | null;
+  activePopup: "solutions" | "productsandservices" | null;
   setActivePopup: React.Dispatch<
-    React.SetStateAction<"products" | "solutions" | null>
+    React.SetStateAction<"solutions" | "productsandservices" | null>
   >;
 };
 
-const productPopupData = [
+const solutionsPopupData = [
   {
     id: 0,
     link: "",
-    text: "Enterprises",
+    text: "Product Optimization",
   },
   {
     id: 1,
     link: "",
-    text: "Enterprises",
+    text: "Performance Assurance",
   },
   {
     id: 2,
     link: "",
-    text: "Enterprises",
+    text: "Geothermal",
   },
   {
     id: 3,
     link: "",
-    text: "Enterprises",
+    text: "Data and AI Platform",
   },
   {
     id: 4,
     link: "",
-    text: "Enterprises",
+    text: "Methane and Flaring Elimination",
   },
   {
     id: 5,
     link: "",
-    text: "Enterprises",
+    text: "Carbon Capture and Storage",
   },
-
   {
     id: 6,
     link: "",
-    text: "Enterprises",
+    text: "Accelerated Time to Market",
   },
   {
     id: 7,
     link: "",
-    text: "Enterprises",
-  },
-  {
-    id: 8,
-    link: "",
-    text: "Enterprises",
-  },
-  {
-    id: 9,
-    link: "",
-    text: "Enterprises",
-  },
-  {
-    id: 10,
-    link: "",
-    text: "Enterprises",
-  },
-  {
-    id: 11,
-    link: "",
-    text: "Enterprises",
+    text: "Emissions Reduction",
   },
 ];
 
@@ -79,24 +58,24 @@ const HamburgerNavbar: React.FC<HamburgerNavbarProps> = ({
     <ul className="mx-[1.6rem] my-[2rem]">
       <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
         <button
-          onClick={() => setActivePopup("products")}
+          onClick={() => setActivePopup("solutions")}
           className="flex w-full cursor-pointer items-center justify-between py-[2rem] text-[1.8rem] font-medium tracking-[0.2px] text-[var(--secondary-color)] transition-all duration-200 hover:opacity-50"
         >
-          <span>Products</span>
+          <span>Solutions</span>
           <ChevronRight />
         </button>
 
-        {/* Products Popup */}
+        {/*  Popup */}
         <div
-          className={`absolute top-0 flex size-full flex-col gap-[.4rem] overflow-y-auto bg-[#F6F9FB] transition-all duration-300 ${activePopup === "products" ? "pointer-events-auto visible left-0 opacity-100" : "pointer-events-none invisible left-full opacity-0"}`}
+          className={`absolute top-0 flex size-full flex-col gap-[.4rem] overflow-y-auto bg-[#F6F9FB] transition-all duration-300 ${activePopup === "solutions" ? "pointer-events-auto visible left-0 opacity-100" : "pointer-events-none invisible left-full opacity-0"}`}
         >
           <div className="bg-white px-[1.6rem] py-[2.4rem]">
-            <h5 className="text-[1.3rem] font-normal text-[var(--secondary-color)] uppercase">
+            {/* <h5 className="text-[1.3rem] font-normal text-[var(--secondary-color)] uppercase">
               By Taha
-            </h5>
+            </h5> */}
 
             <ul className="flex flex-col gap-[2.4rem] py-[1.2rem]">
-              {productPopupData.map((item) => (
+              {solutionsPopupData.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.link}
@@ -114,24 +93,24 @@ const HamburgerNavbar: React.FC<HamburgerNavbarProps> = ({
 
       <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
         <button
-          onClick={() => setActivePopup("solutions")}
+          onClick={() => setActivePopup("productsandservices")}
           className="flex w-full cursor-pointer items-center justify-between py-[2rem] text-[1.8rem] font-medium tracking-[0.2px] text-[var(--secondary-color)] transition-all duration-200 hover:opacity-50"
         >
-          <span>Solutions</span>
+          <span>Products and Services</span>
           <ChevronRight />
         </button>
 
-        {/* Solutions Popup */}
+        {/*  Popup */}
         <div
-          className={`absolute top-0 flex size-full flex-col gap-[.4rem] overflow-y-auto bg-[#F6F9FB] transition-all duration-300 ${activePopup === "solutions" ? "pointer-events-auto visible left-0 opacity-100" : "pointer-events-none invisible left-full opacity-0"}`}
+          className={`absolute top-0 flex size-full flex-col gap-[.4rem] overflow-y-auto bg-[#F6F9FB] transition-all duration-300 ${activePopup === "productsandservices" ? "pointer-events-auto visible left-0 opacity-100" : "pointer-events-none invisible left-full opacity-0"}`}
         >
           <div className="bg-white px-[1.6rem] py-[2.4rem]">
-            <h5 className="text-[1.3rem] font-normal text-[var(--secondary-color)] uppercase">
+            {/* <h5 className="text-[1.3rem] font-normal text-[var(--secondary-color)] uppercase">
               By Stage
-            </h5>
+            </h5> */}
 
             <ul className="flex flex-col gap-[2.4rem] py-[1.2rem]">
-              {productPopupData.map((item) => (
+              {solutionsPopupData.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.link}
@@ -147,14 +126,14 @@ const HamburgerNavbar: React.FC<HamburgerNavbarProps> = ({
         </div>
       </li>
 
-      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+      {/* <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
         <a
           href=""
           className="flex w-full items-center justify-between py-[2rem] text-[1.8rem] font-medium tracking-[0.2px] text-[var(--secondary-color)] transition-all duration-200 hover:opacity-50"
         >
           Pricing
         </a>
-      </li>
+      </li> */}
     </ul>
   );
 };

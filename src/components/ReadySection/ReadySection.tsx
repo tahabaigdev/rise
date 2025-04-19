@@ -13,8 +13,8 @@ const ReadySection = () => {
 
   return (
     <section>
-      <div className="container py-[6rem]">
-        <div className="grid grid-cols-2">
+      <div className="container px-[2rem] py-[6rem] lg:px-[0rem]">
+        <div className="grid grid-cols-1 gap-[4rem] md:grid-cols-2 md:gap-[0rem]">
           <div
             data-aos="fade-up"
             className="flex flex-col items-start gap-[2.4rem] pr-[11.2rem] pl-[1.6rem]"
@@ -28,7 +28,7 @@ const ReadySection = () => {
               custom consultation.
             </p>
 
-            <div className="flex items-center gap-[1.6rem]">
+            <div className="flex flex-wrap items-center gap-[1.6rem]">
               <CtaButton
                 text="Start now"
                 bgColor="bg-[var(--primary-color)]"
@@ -47,7 +47,7 @@ const ReadySection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-1 gap-[4rem] sm:grid-cols-2 sm:gap-[0rem]">
             <div
               data-aos="fade-up"
               data-aos-delay="100"

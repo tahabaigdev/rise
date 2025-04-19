@@ -25,8 +25,8 @@ const productsItem2 = [
 const Footer = () => {
   return (
     <footer className="bg-[#EFECEB]">
-      <div className="container py-[10rem]">
-        <div className="relative grid grid-cols-4">
+      <div className="container px-[2rem] py-[6rem] sm:py-[10rem] lg:px-[0rem]">
+        <div className="relative grid grid-cols-1 gap-y-[4rem] sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-[0rem]">
           <div className="flex flex-col gap-[2rem]">
             <a href="" className="inline-flex max-w-[18rem]">
               <img

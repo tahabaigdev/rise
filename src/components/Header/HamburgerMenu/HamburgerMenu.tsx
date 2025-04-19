@@ -11,7 +11,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   setActiveHamburger,
 }) => {
   const [activePopup, setActivePopup] = useState<
-    "products" | "solutions" | null
+    "solutions" | "productsandservices" | null
   >(null);
 
   const closePopup = () => setActivePopup(null);
